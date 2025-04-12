@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details Page</title>
+</head>
+<body>
+    <h1 id="greeting"></h1>
+    <div id="userDetails"></div>
+    
+    <button onclick="getUserDetails()">Enter Your Details</button>
+    
+    <script>
+        function getUserDetails() {
+            var firstName = prompt("Please enter your first name:");
+            var lastName = prompt("Please enter your last name:");
+            var dob = prompt("Please enter your birthday (DD/MM/YYYY):");
+            var address = prompt("Please enter your Home address:");
+            var telephone = prompt("Please enter your telephone number:");
+            
+            if (firstName && lastName) {
+                document.getElementById("greeting").innerHTML = "Welcome, " + firstName + " " + lastName + "!";
+                
+                var detailsHTML = "<h3>Your Details:</h3>" +
+                    "<p><strong>First Name:</strong> " + firstName + "</p>" +
+                    "<p><strong>Last Name:</strong> " + lastName + "</p>" +
+                    "<p><strong>Date of Birth:</strong> " + dob + "</p>" +
+                    "<p><strong>Address:</strong> " + address + "</p>" +
+                    "<p><strong>Telephone:</strong> " + telephone + "</p>";
+                
+                document.getElementById("userDetails").innerHTML = detailsHTML;
+            } else {
+                alert("You must enter at least your first and last name!");
+            }
+        }
+    </script>
+</body>
+</html>
